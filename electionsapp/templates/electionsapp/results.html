@@ -1,0 +1,14 @@
+{% extends "electionsapp/base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+    {% if results %}
+        <ul>
+        {% for choice in results %}
+            <li>{{ choice }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No choice are available.</p>
+    {% endif %}
+    {{feedback_form|linebreaks}}
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "electionsapp/base.html" %}
+{% block title %}Elections{% endblock %}
+{% block content %}
+    <div class="card mx-auto">
+    {% if index_list %}
+        <ul class="list-group">
+        {% for election in index_list %}
+            <li class="list-group-item" ><a href="{% url 'elect:detail' election.id %}">{{ election.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    </div>
+{% endblock content %}
